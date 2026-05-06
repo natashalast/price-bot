@@ -9,9 +9,11 @@ from telegram.ext import (
     filters, CallbackContext
 )
 import pandas as pd
-import pytesseract
-from PIL import Image
-from rapidfuzz import process
+try:
+    import pytesseract
+except ImportError:
+    pytesseract = None
+from PIL import Imagefrom rapidfuzz import process
 
 # ========== КОНФИГУРАЦИЯ ==========
 TOKEN = '8132772993:AAEzemQlQ5RGFq-cQkKFQ9o0xeNWl5e_1S4'
